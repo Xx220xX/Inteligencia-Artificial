@@ -1,4 +1,4 @@
-﻿#ifndef RNG__H
+#ifndef RNG__H
 #define RNG__H
 
 #include "stdio.h"
