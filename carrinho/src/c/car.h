@@ -1,5 +1,5 @@
 #include"../rng/fisica.c"
-#include"../rng/RNG.H"
+#include"../rng_otimize/RNG.H"
 #include "constantes.h"
 
 
@@ -36,7 +36,7 @@ void setComando(double *comando,Carro *c){// comando[0] frente roda esquerda , c
  a 6 correspode ao tempo que esta parado
  a 7 corresponde ao sensor de linha quando fica 3 cm de distancia da borda
 */
-void getInput(Carro *c,Carro *c2,double input[7] ){
+void getInput(Carro *c,Carro *c2,double input[7]){
 	int i =0 ;
 	for(i=1;i<5;i++)c->dist[i-1] = c->dist[i];
 	P liga = Psub(c->centro,c2->centro);

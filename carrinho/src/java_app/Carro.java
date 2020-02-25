@@ -18,7 +18,7 @@ public class Carro {
     public P centro;
     public P ponta;
     RNG rng;
-    int classe;
+    char classe;
     int id;// index
     int alive;
     double v;// velocidade
@@ -33,8 +33,8 @@ public class Carro {
      * @param r   gerar numero aleatorios
      * @param rng rede neural
      */
-    public Carro(Random r, RNG rng, int id) {
-        if (r==null || rng == null){
+    public Carro(Random r, RNG rng, int id,char classe) {
+        if (r == null || rng == null) {
             throw new NullPointerException("os argumentos nao podem ser nulos");
         }
         double angle = r.nextDouble() * Math.PI;
@@ -43,9 +43,15 @@ public class Carro {
         ponta = new P(Math.cos(angle) * (Constantes.RAIO - Constantes.COMPRIMENTO / 2), Math.sin(angle) * (Constantes.RAIO - Constantes.COMPRIMENTO / 2));
         this.rng = rng;
         this.id = id;
-
+        this.classe = classe;
     }
 
-    public static native void update(Carro c1, Carro c2);
+    public static native long update(Carro c1, Carro c2,long seed);
 
+    public  String new_carroStream(){
+     return    "carros_"+classe+"[" +id + "] = Carro(PVector(" + ponta.x + " , " + ponta.y + ") , PVector(" + centro.x + " , " + centro.y + "))\n";
+    }
+    public String getState2Stream() {
+        return "carros_"+classe+"[" + id + "].ponta = PVector(" + ponta.x + " , " + ponta.y + ")\n" + "carros_"+classe+"[" + id + "].centro = PVector(" + centro.x + " , " + centro.y + ")\n";
+    }
 }

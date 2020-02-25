@@ -6,8 +6,11 @@ class Carro:
     def __init__(self,c,p):
         self.c = c
         self.p = p
-        
         self.alive = True
+    def update(self,c,p,alive):
+        self.c = c
+        self.p = p
+        self.alive = alive
         
     def show(self):
         if not self.alive :

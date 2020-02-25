@@ -10,10 +10,10 @@ extern "C" {
 /*
  * Class:     RNG
  * Method:    init
- * Signature: ()V
+ * Signature: (J)J
  */
-JNIEXPORT void JNICALL Java_RNG_init
-  (JNIEnv *, jobject);
+JNIEXPORT jlong JNICALL Java_RNG_init
+  (JNIEnv *, jobject, jlong);
 
 #ifdef __cplusplus
 }

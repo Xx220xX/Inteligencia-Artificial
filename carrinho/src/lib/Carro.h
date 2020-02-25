@@ -10,10 +10,10 @@ extern "C" {
 /*
  * Class:     Carro
  * Method:    update
- * Signature: (LCarro;LCarro;)V
+ * Signature: (LCarro;LCarro;J)J
  */
-JNIEXPORT void JNICALL Java_Carro_update
-  (JNIEnv *, jclass, jobject, jobject);
+JNIEXPORT jlong JNICALL Java_Carro_update
+  (JNIEnv *, jclass, jobject, jobject, jlong);
 
 #ifdef __cplusplus
 }

@@ -53,9 +53,10 @@ Carro j2cCarro(JNIEnv *env, jobject carro) {
 /*
  * Class:     Carro
  * Method:    update
- * Signature: (LCarro;LCarro;)V
+ * Signature: (LCarro;LCarro;J)J
  */
-JNIEXPORT void JNICALL Java_Carro_update  (JNIEnv *env, jclass tcls, jobject jcar1, jobject jcar2 ){
+JNIEXPORT jlong JNICALL Java_Carro_update(JNIEnv *env, jclass tcls, jobject jcar1, jobject jcar2,jlong seed ){
+    initRandom(seed);
     Carro c1 = j2cCarro(env,jcar1), c2 = j2cCarro(env,jcar2);
-    printf("sucess\n");
+    return getRandom();
 }

@@ -4,9 +4,14 @@
 
 #include "easyJava.h"
 #include "RNG.h"
-#include "../rng/RNG.h"
-#include "stdio.h"
-JNIEXPORT void JNICALL Java_RNG_init(JNIEnv *env, jobject this) {
+#include "../rng_otimize/RNG_constructor.h"
+/*
+ * Class:     RNG
+ * Method:    init
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_RNG_init(JNIEnv *env, jobject this, jlong seed){
+    initRandom(seed);
     jintArray iarr0 = easy_getObject(env, this, "arquitetura", "[I");
     int arquitetura_len = (*env)->GetArrayLength(env, iarr0);
     int *arquitetura = (*env)->GetIntArrayElements(env, iarr0, NULL);
@@ -17,5 +22,5 @@ JNIEXPORT void JNICALL Java_RNG_init(JNIEnv *env, jobject this) {
     jfieldID fid  = (*env)->GetFieldID(env,mycls,"dna","[D");
     (*env)->SetObjectField(env, this, fid, darr0);
     freeRNG(tempo_rng);
-    printf("init function has called with success");
+    return getRandom();
 }
