@@ -1,0 +1,11 @@
+Rede neural para sumocup
+
+Ideia:
+    linkar java com c possibilitando uso aprimorado de threads que java possui e
+    a velocidade que a linguagem c proporciona.
+
+Carro.java :
+    Em java o objeto Carro  representando o carrinho
+    metodos:
+        java so conhecera o metodo update que é estatico e passam dois carros
+        em c é feito os calculos inclusive de calcular a saida da rede neural

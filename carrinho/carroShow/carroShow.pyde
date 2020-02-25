@@ -9,7 +9,8 @@ def setup():
 def draw():
     background(255)
     translate(0,CTE.SCL)
-    circle(CTE.RAIO*CTE.SCL,-CTE.RAIO*CTE.SCL,2*CTE.RAIO*CTE.SCL)
+    circle(CTE.RAIO*CTE.SCL,-CTE.RAIO*CTE.SCL,2*CTE
+           .RAIO*CTE.SCL)
     for c in carros:
         c.show()
     Stream.update("../stream/update.car",carros)
