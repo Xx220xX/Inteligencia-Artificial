@@ -1,0 +1,234 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x62f84649, pid=1292, tid=0x000011e4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_241-b07) (build 1.8.0_241-b07)
+# Java VM: Java HotSpot(TM) Client VM (25.241-b07 mixed mode windows-x86 )
+# Problematic frame:
+# C  [Carro.dll+0x4649]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x015fcc00):  JavaThread "main" [_thread_in_native, id=4580, stack(0x01540000,0x01590000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x00000000, EDX=0x00000000
+ESP=0x0158f1d0, EBP=0x0158f2d8, ESI=0x0158f480, EDI=0x0158f2b0
+EIP=0x62f84649, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0158f1d0)
+0x0158f1d0:   015fcc00 154f0088 00000000 62f8612d
+0x0158f1e0:   0046eee8 0000001c 75927d20 00000003
+0x0158f1f0:   00000000 00000000 b556ea26 3fe9a223
+0x0158f200:   b7d40773 3feab404 cf6b092b 3fda6c4f
+0x0158f210:   d3f94348 3fee209f 9bed5d7b 3fdb0af1
+0x0158f220:   f54f5840 3fec8ec6 00000000 00000000
+0x0158f230:   00000000 00000000 00000000 00000000
+0x0158f240:   00000000 00000000 00000000 00000000 
+
+Instructions: (pc=0x62f84649)
+0x62f84629:   ff d2 83 ec 0c 89 45 d8 c7 45 e4 00 00 00 00 eb
+0x62f84639:   22 8b 45 e4 8d 14 c5 00 00 00 00 8b 45 d8 01 d0
+0x62f84649:   dd 00 8b 45 e4 83 c0 0a dd 9c c5 30 ff ff ff 83
+0x62f84659:   45 e4 01 83 7d e4 04 7e d8 c7 44 24 0c 89 61 f8 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00000000 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x0158f1d0 is pointing into the stack for thread: 0x015fcc00
+EBP=0x0158f2d8 is pointing into the stack for thread: 0x015fcc00
+ESI=0x0158f480 is pointing into the stack for thread: 0x015fcc00
+EDI=0x0158f2b0 is pointing into the stack for thread: 0x015fcc00
+
+
+Stack: [0x01540000,0x01590000],  sp=0x0158f1d0,  free space=316k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [Carro.dll+0x4649]
+C  [Carro.dll+0x474b]
+J 37  Carro.update(LCarro;LCarro;J)J (0 bytes) @ 0x02fe1a59 [0x02fe19a0+0xb9]
+J 39% C1 Main.main([Ljava/lang/String;)V (136 bytes) @ 0x02fe2ebc [0x02fe2ba0+0x31c]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x15c5c5]
+V  [jvm.dll+0x228b6e]
+V  [jvm.dll+0x15c65e]
+V  [jvm.dll+0xdda07]
+V  [jvm.dll+0xe5f9f]
+C  [java.exe+0x2363]
+C  [java.exe+0xb03f]
+C  [java.exe+0xb0c9]
+C  [KERNEL32.DLL+0x16359]
+C  [ntdll.dll+0x67b74]
+C  [ntdll.dll+0x67b44]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 37  Carro.update(LCarro;LCarro;J)J (0 bytes) @ 0x02fe1a15 [0x02fe19a0+0x75]
+J 39% C1 Main.main([Ljava/lang/String;)V (136 bytes) @ 0x02fe2ebc [0x02fe2ba0+0x31c]
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x1551ec00 JavaThread "Service Thread" daemon [_thread_blocked, id=8436, stack(0x15b10000,0x15b60000)]
+  0x1552bc00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3096, stack(0x15a80000,0x15ad0000)]
+  0x1552ac00 JavaThread "Attach Listener" daemon [_thread_blocked, id=4912, stack(0x159f0000,0x15a40000)]
+  0x15528c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5316, stack(0x15960000,0x159b0000)]
+  0x1550ac00 JavaThread "Finalizer" daemon [_thread_blocked, id=8856, stack(0x157c0000,0x15810000)]
+  0x15505000 JavaThread "Reference Handler" daemon [_thread_blocked, id=7716, stack(0x15730000,0x15780000)]
+=>0x015fcc00 JavaThread "main" [_thread_in_native, id=4580, stack(0x01540000,0x01590000)]
+
+Other Threads:
+  0x02ebe400 VMThread [stack: 0x04fb0000,0x05000000] [id=5796]
+  0x15522400 WatcherThread [stack: 0x15ba0000,0x15bf0000] [id=4804]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 972K [0x05000000, 0x05550000, 0x0a550000)
+  eden space 4416K,  22% used [0x05000000, 0x050f3310, 0x05450000)
+  from space 512K,   0% used [0x05450000, 0x05450000, 0x054d0000)
+  to   space 512K,   0% used [0x054d0000, 0x054d0000, 0x05550000)
+ tenured generation   total 10944K, used 0K [0x0a550000, 0x0b000000, 0x15000000)
+   the space 10944K,   0% used [0x0a550000, 0x0a550000, 0x0a550200, 0x0b000000)
+ Metaspace       used 1771K, capacity 2280K, committed 2368K, reserved 4480K
+
+Card table byte_map: [0x15000000,0x15090000] byte_map_base: 0x14fd8000
+
+Polling page: 0x01400000
+
+CodeCache: size=32768Kb used=717Kb max_used=717Kb free=32050Kb
+ bounds [0x02f30000, 0x02fe8000, 0x04f30000]
+ total_blobs=180 nmethods=39 adapters=73
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.145 Thread 0x1552bc00   34             java.util.LinkedList::size (5 bytes)
+Event: 0.145 Thread 0x1552bc00 nmethod 34 0x02fe2188 code [0x02fe2280, 0x02fe2300]
+Event: 0.145 Thread 0x1552bc00   35             java.util.LinkedList::getFirst (22 bytes)
+Event: 0.145 Thread 0x1552bc00 nmethod 35 0x02fe2348 code [0x02fe2450, 0x02fe252c]
+Event: 0.145 Thread 0x1552bc00   36             Duplas::update (20 bytes)
+Event: 0.145 Thread 0x1552bc00 nmethod 36 0x02fe2608 code [0x02fe2700, 0x02fe27bc]
+Event: 0.145 Thread 0x1552bc00   38             java.util.HashMap::afterNodeAccess (1 bytes)
+Event: 0.145 Thread 0x1552bc00 nmethod 38 0x02fe2848 code [0x02fe2940, 0x02fe29c0]
+Event: 0.311 Thread 0x1552bc00   39 %           Main::main @ 67 (136 bytes)
+Event: 0.312 Thread 0x1552bc00 nmethod 39% 0x02fe2a08 code [0x02fe2ba0, 0x02fe3150]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.032 Thread 0x015fcc00 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x05006eb8) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u241\331\hotspot\s
+Event: 0.032 Thread 0x015fcc00 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x05007188) thrown at [C:\ade\jenkins\workspace\8-2-build-windows-i586-cygwin\jdk8u241\331\hotspot\src\share\vm\prims\
+
+Events (10 events):
+Event: 0.122 loading class java/util/Deque done
+Event: 0.122 loading class java/util/AbstractSequentialList
+Event: 0.122 loading class java/util/AbstractSequentialList done
+Event: 0.123 loading class java/util/LinkedList done
+Event: 0.123 loading class java/util/Arrays$ArrayList
+Event: 0.123 loading class java/util/Arrays$ArrayList done
+Event: 0.123 loading class java/util/LinkedList$Node
+Event: 0.123 loading class java/util/LinkedList$Node done
+Event: 4.147 Executing VM operation: EnableBiasedLocking
+Event: 4.147 Executing VM operation: EnableBiasedLocking done
+
+
+Dynamic libraries:
+0x00470000 - 0x004a3000 	C:\Program Files (x86)\Java\jdk1.8.0_241\bin\java.exe
+0x77400000 - 0x7759a000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x75590000 - 0x75670000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x76a20000 - 0x76c1d000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x74180000 - 0x7421f000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x75ea0000 - 0x75f19000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x76120000 - 0x761df000 	C:\WINDOWS\System32\msvcrt.dll
+0x75930000 - 0x759a6000 	C:\WINDOWS\System32\sechost.dll
+0x768e0000 - 0x7699b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x74bd0000 - 0x74bf0000 	C:\WINDOWS\System32\SspiCli.dll
+0x74bc0000 - 0x74bca000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x74bf0000 - 0x74c4f000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x76c20000 - 0x76db7000 	C:\WINDOWS\System32\USER32.dll
+0x773b0000 - 0x773c7000 	C:\WINDOWS\System32\win32u.dll
+0x759c0000 - 0x759e1000 	C:\WINDOWS\System32\GDI32.dll
+0x757a0000 - 0x758fa000 	C:\WINDOWS\System32\gdi32full.dll
+0x75fa0000 - 0x7601c000 	C:\WINDOWS\System32\msvcp_win.dll
+0x750e0000 - 0x751ff000 	C:\WINDOWS\System32\ucrtbase.dll
+0x749b0000 - 0x74bbf000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.657_none_2e72ec50278a619e\COMCTL32.dll
+0x75310000 - 0x75585000 	C:\WINDOWS\System32\combase.dll
+0x750b0000 - 0x750d5000 	C:\WINDOWS\System32\IMM32.DLL
+0x740c0000 - 0x7417f000 	C:\Program Files (x86)\Java\jdk1.8.0_241\jre\bin\msvcr100.dll
+0x73ce0000 - 0x740ba000 	C:\Program Files (x86)\Java\jdk1.8.0_241\jre\bin\client\jvm.dll
+0x76850000 - 0x76856000 	C:\WINDOWS\System32\PSAPI.DLL
+0x749a0000 - 0x749a8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x74810000 - 0x74834000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x74c50000 - 0x74cae000 	C:\WINDOWS\System32\WS2_32.dll
+0x738b0000 - 0x738b8000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x73cb0000 - 0x73cd3000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x761e0000 - 0x7621b000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x74800000 - 0x7480c000 	C:\Program Files (x86)\Java\jdk1.8.0_241\jre\bin\verify.dll
+0x73c80000 - 0x73ca1000 	C:\Program Files (x86)\Java\jdk1.8.0_241\jre\bin\java.dll
+0x73c60000 - 0x73c74000 	C:\Program Files (x86)\Java\jdk1.8.0_241\jre\bin\zip.dll
+0x76e10000 - 0x7738a000 	C:\WINDOWS\System32\SHELL32.dll
+0x75710000 - 0x75794000 	C:\WINDOWS\System32\shcore.dll
+0x76280000 - 0x76845000 	C:\WINDOWS\System32\windows.storage.dll
+0x77390000 - 0x773a7000 	C:\WINDOWS\System32\profapi.dll
+0x76dc0000 - 0x76e03000 	C:\WINDOWS\System32\powrprof.dll
+0x75f20000 - 0x75f2d000 	C:\WINDOWS\System32\UMPDC.dll
+0x76220000 - 0x76264000 	C:\WINDOWS\System32\shlwapi.dll
+0x76270000 - 0x7627f000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x768c0000 - 0x768d3000 	C:\WINDOWS\System32\cryptsp.dll
+0x67840000 - 0x67851000 	C:\Users\PC\Desktop\Henrique\Inteligencia-Artificial\carrinho\src\java_app\out\RNG.dll
+0x6eb40000 - 0x6ec1d000 	C:\MinGW\bin\libgcc_s_dw2-1.dll
+0x62f80000 - 0x62f93000 	C:\Users\PC\Desktop\Henrique\Inteligencia-Artificial\carrinho\src\java_app\out\Carro.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=out 
+java_command: Main
+java_class_path (initial): out
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0_241
+JRE_HOME=C:\Program Files (x86)\Java\jre1.8.0_241
+PATH=C:\Program Files\Python37\Scripts\;C:\Program Files\Python37\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\lua;C:\ProgramData\chocolatey\bin;C:\Program Files\MATLAB\R2018b\runtime\win64;C:\Program Files\MATLAB\R2018b\bin;C:\Android\Sdk\platform-tools;C:\Android\Sdk\tools;C:\Program Files\nodejs\;C:\Program Files (x86)\Java\jdk1.8.0_241\bin;C:\Program Files (x86)\Java\jre1.8.0_241\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\MinGW\bin;C:\Users\PC\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2.1\bin;;C:\processing-3.5.3;C:\Program Files\Sublime Text 3;C:\Program Files\JetBrains\CLion 2019.3.2\bin;;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;C:\Program Files\MATLAB\R2018b\bin;;C:\Program Files\JetBrains\WebStorm 2019.3.2\bin;
+USERNAME=PC
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Failed to allocate version_info
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, tsc, tscinvbit
+
+Memory: 4k page, physical 4079628k(494568k free), swap 10895372k(5509080k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.241-b07) for windows-x86 JRE (1.8.0_241-b07), built on Dec 11 2019 10:24:16 by "rejava" with MS VC++ 10.0 (VS2010)
+
+time: Sat Feb 29 12:00:24 2020
+elapsed time: 35 seconds (0d 0h 0m 35s)
+

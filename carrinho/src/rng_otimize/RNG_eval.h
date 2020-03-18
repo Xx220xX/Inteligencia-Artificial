@@ -66,35 +66,37 @@ void randomMutation(RNG *redes, int len, double *rangeMutation) {
     double media = 0;
     int tipo, indice, numeroMutacao;
 
+    int i, k;//index;
+
     // achar a media da pontuacao
     //FORI(iter,0,len,media += redes[iter].pontuacao);
     //media /= len;
 
     //achar o melhor
-    FORI(iter, 1, len,
-    if (redes[iter].pontuacao > melhor->pontuacao)melhor = redes + iter);
-    // copiar dna
-    FORI(i, 0, len, COPIA_VETOR(redes[i].dna, melhor->dna, melhor->dna_len));
-    //mutacao aa partir do 2 dna mantendo intacto o melhor anterior
+    for (i = 1; i < len; i++)if (redes[i].pontuacao > melhor->pontuacao) melhor = redes + i;
 
-    FORI(i, 1, len,
-         numeroMutacao = (randomInt() % (int) *rangeMutation) + 1;
-    FORI(k, 0, numeroMutacao,
-         tipo = randomInt() % 3;
-    indice = randomInt() % redes[i].dna_len;
-    switch (tipo) {
-        case 0:// mudar peso
-            redes[i].dna[indice] = pesoAleatorio();
-            break;
-        case 1:// multiplicacao aleatoria
-            redes[i].dna[indice] *= randomDouble() + 0.5;
-            break;
-        case 2:// Soma aleatoria
-            redes[i].dna[indice] += randomDouble();
-            break;
+    // copiar dna
+    for (i = 0; i < len; i++) COPIA_VETOR(redes[i].dna, melhor->dna, melhor->dna_len);
+
+    //mutacao aa partir do 2 dna mantendo intacto o melhor anterior
+    for (i = 1; i < len; i++) {
+        numeroMutacao = (randomInt() % (int) *rangeMutation) + 1;
+        for (k = 0; k < numeroMutacao; k++) {
+            tipo = randomInt() % 3;
+            indice = randomInt() % redes[i].dna_len;
+            switch (tipo) {
+                case 0:// mudar peso
+                    redes[i].dna[indice] = pesoAleatorio();
+                    break;
+                case 1:// multiplicacao aleatoria
+                    redes[i].dna[indice] = redes[i].dna[indice] * (randomDouble() + 0.5);
+                    break;
+                case 2:// Soma aleatoria
+                    redes[i].dna[indice] += randomDouble();
+                    break;
+            }
+        }
     }
-    );
-    );
     *rangeMutation = *rangeMutation * 0.99;
     if (*rangeMutation < 20) *rangeMutation = 20;
 }

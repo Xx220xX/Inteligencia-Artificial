@@ -7,7 +7,7 @@
 RNG j2cRNG(JNIEnv *env, jobject rng) {
     RNG temp_rng = {0};
     // dna
-    printf("\nvou ler o array aqui man\n");
+    //printf("\nvou ler o array aqui man\n");
     jdoubleArray d_ar = easy_getObject(env, rng, "dna", "[D");
     temp_rng.dna_len = (*env)->GetArrayLength(env, d_ar);
     temp_rng.dna = (*env)->GetDoubleArrayElements(env, d_ar, NULL);

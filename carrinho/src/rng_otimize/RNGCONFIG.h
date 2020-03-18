@@ -6,7 +6,7 @@
 typedef
 unsigned long long int Bytes8;
 typedef struct { Bytes8 a, c, m, rand_max, atual; }LCG;
-static LCG  lcg;
+static LCG  lcg={0x5DEECE66DULL,11ULL,1ULL<<48,(1ULL<<48)-1,(long long int)M_PI*(10<<6)};
 
 void semente(LCG * r, Bytes8 seed) {
 // constantes do POSIX [de]rand48, glibc [de]rand48[_r]
@@ -47,8 +47,8 @@ void updateRand(long long lastN){
 long long int getRandom(){
     return lcg.atual;
 }
-long int randomInt() {
-    return lcg_rand(&lcg);
+int randomInt() {
+    return lcg_rand(&lcg)%(1<<28);
 }
 
 /**

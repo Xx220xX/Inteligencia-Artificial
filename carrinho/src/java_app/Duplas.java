@@ -3,10 +3,11 @@ import java.util.Random;
 public class Duplas {
     private Carro c1, c2;
     public long seed;
-
+    public int id;
     public Duplas(Random r, int id, RNG rnga, RNG rngb) {
         this.c1 = new Carro(r, rnga, id, 'a');
         this.c2 = new Carro(r, rngb, id, 'b');
+        this.id =  id;
     }
 
 

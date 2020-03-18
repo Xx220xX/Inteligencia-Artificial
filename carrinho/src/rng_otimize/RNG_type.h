@@ -5,14 +5,11 @@
 #ifndef LIB_RNG_TYPE_H
 #define LIB_RNG_TYPE_H
 
-typedef struct{
+typedef struct {
     double *dna;//pesos
     int dna_len;
     int *arquitetura;
     int arquitetura_len;
-
-//    void *p;// usado para atribuir uma strutura para modelagem
-//    int p_isdinamic;//se deve liberar p
     double pontuacao;
-}RNG;
+} RNG;
 #endif //LIB_RNG_TYPE_H

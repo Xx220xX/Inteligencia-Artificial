@@ -8,7 +8,8 @@
 void freeRNG(RNG r) {
     liberar(r.dna);
     liberar(r.arquitetura);
-//    if (r.p_isdinamic)liberar(r.p);
+    r.dna = 0;
+    r.arquitetura = 0;
 }
 
 #endif //LIB_RNG_FREE_H
