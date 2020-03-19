@@ -1,5 +1,5 @@
 # Gabriela aprendendo a jogar sumocup
-
+  - [Documentação](documentacao/README.md)
   - [ESTRATEGIA](estrategia)
   
   
@@ -21,4 +21,6 @@
   
   Para mostrar na tela é usado um programado separado com stream de arquivos lendo e atualizando as posicoes dos 
   Carrinhos. Este é feito em processing python;
+
+
   
