@@ -1,4 +1,4 @@
-#include"../rng/fisica.c"
+#include"fisica.h"
 #include"../rng_otimize/RNG.H"
 #include "constantes.h"
 // help https://www.math10.com/en/geometry/geogebra/fullscreen.html
@@ -90,46 +90,6 @@ void chekAlive(Carro *c1, Carro *c2) {
     }
 }
 
-
-
-Solucao encontrodeRetaCirculo(P cC,double R,P p1,P p2){
-
-
-}
-/**
- * \Representação
- * \n
- *  ___ p1 ___\n
- * |..................|\n
- * |..................|\n
- * |......c1........|\n
- * |..................|\n
- * |_________|\n\n
- * da ________\n
- * |..................|\n
- * |..................|\n
- * |..................|\n
- * |..................|\n
- * pa________db\n
- * 
- * @param c1 centro do quadrado 1 
- * @param p1 ponto acima do centro 
- * @param c2 
- * @param p2 
- * @param largura 
- * @param comprimento 
- * @return 
- */
-Solucao colidiuQuadrado2(P c1, P p1, P c2, P p2, double largura, double comprimento) {
-    double dist = Pabs(Psub(c1,c2));// caso distancia seja menor que o comprimento eles colidiram
-    Solucao  s = {0};
-    if( dist >sqrt(comprimento*comprimento+largura*largura))return s;
-     Reta  car1 = RetaByPoints(c1,p1);
-     Reta  car2 = RetaByPoints(c2,p2);
-     double  angle = (RetaAngle(car1)-M_PI_2)*180.0/M_PI;
-     if(angle >)
-
-}
 Solucao colidiuQuadrado1(P c1, P p1, P c2, P p2, double largura, double comprimento) {
     P corners[8], // vetor contendo as pontas de ambos quadrados
             vetor2Origem; // vetor para transladar para referencia de PA
@@ -138,8 +98,8 @@ Solucao colidiuQuadrado1(P c1, P p1, P c2, P p2, double largura, double comprime
     P atual;
     Solucao  s={0};
     //find conners
-    getCorners(corners, c1, p1, largura, comprimento);
-    getCorners(corners + 4, c2, p2, largura, comprimento);
+    getConers(corners, c1, p1, largura, comprimento);
+    getConers(corners + 4, c2, p2, largura, comprimento);
     vetor2Origem = corners[2];
     angle = -Pangle(Psub(corners[1], corners[2]));
     // mudar coordenadas
@@ -155,8 +115,8 @@ Solucao colidiuQuadrado1(P c1, P p1, P c2, P p2, double largura, double comprime
     }
     return (Solucao) {0};
 }
-void fisica (Carro *c1,Carro *c2){
-    Solucao  s = colidiuQuadrado2(c1->centro,c1->ponta,c1.)
+void aplicarFisica (Carro *c1, Carro *c2){
+//    Solucao  s = colidiuQuadrado(c1->centro,c1->ponta,c1.)
 }
 void mover(Carro *c1, Carro *c2) {
 
@@ -173,7 +133,7 @@ void play(Carro *c1, Carro *c2) {
     eval(*c2->rng, input + NUMERO_DE_ENTRADAS, output + NUMERO_DE_SAIDAS);
     setComando(output, c1);
     setComando(output + NUMERO_DE_SAIDAS, c2);
-    fisica(c1,c2);
+    aplicarFisica(c1, c2);
     mover(c1, c2);
     chekAlive(c1, c2);
 }

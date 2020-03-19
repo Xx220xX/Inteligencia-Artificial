@@ -11,12 +11,11 @@ Carro newCarro(RNG *r) {
     c.ponta.y = sin(angle);
     c.centro = Padd(PmulEsc(c.centro, RAIO - COMPRIMENTO / 2), (P) {RAIO, RAIO});
     c.ponta = Padd(PmulEsc(c.ponta, RAIO - COMPRIMENTO), (P) {RAIO, RAIO});
-
     c.rng = r;
     return c;
 }
 
-
+/** função para mostrar os carros na web (debub é implementada em java no projeto)*/
 void initprintCar(Carro *c1, Carro *c2, int id, int append) {
     FILE *f = fopen("../../../stream/init.car", append ? "a" : "w");
     fprintf(f, "ca[%d] = new Carro(createVector(%lf,%lf),createVector(%lf,%lf));\n", id, c1->centro.x, c1->centro.y,
@@ -28,6 +27,7 @@ void initprintCar(Carro *c1, Carro *c2, int id, int append) {
     fclose(f);
 }
 
+/** função para mostrar os carros na web (debub é implementada em java no projeto)*/
 void printCar(Carro *c1, Carro *c2, int id, int append) {
     FILE *f = fopen("../../../stream/update.car", append ? "a" : "w");
     if (!f)
