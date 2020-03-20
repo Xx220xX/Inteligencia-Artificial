@@ -18,9 +18,18 @@ typedef struct {
     double points;
     RNG *rng;
 } Carro;
+/**
+ * Converte a saida da rede neural em ações para op carrinho
+ * @param comando vetor double de saida da rede neural
+ * é valido caso valor seja maior que 0.4
+ * comando[0] frente roda esquerda ,
+ * comando[1] tras roda esquerda,
+ * comando[2] frente roda direita
+ * comando[3] tras roda direita
+ * @param c carro que sofrerá a ação
+ */
+void setComando(double *comando, Carro *c) {
 
-void setComando(double *comando,
-                Carro *c) {// comando[0] frente roda esquerda , comando[2] frente roda direita  comando[1] tras roda esquerda, comando[3] tras roda direita
     int i = 0;
     for (i = 0; i < 4; i++)comando[i] = comando[i] < 0.4 ? 0 : comando[i];
     if (comando[0] > comando[1])c->fe = 1;
@@ -56,8 +65,13 @@ void getInput(Carro *c, Carro *c2, double input[7]) {
     }
 
 }
-
+/**
+ * Verifica se o jogo para esses carros acabou
+ * @param c1
+ * @param c2
+ */
 void chekAlive(Carro *c1, Carro *c2) {
+    c1->alive = c2->alive = c1->alive && c2->alive;
     c1->rng->pontuacao = c2->rng->pontuacao = c1->points = c2->points = c1->tempoTotal;
     if (c1->tempo_parado * TEMPO_MAXIMO_PARADO >= TEMPO_MAXIMO_PARADO) {
         c1->alive = c2->alive = 0;
@@ -115,13 +129,15 @@ Solucao colidiuQuadrado1(P c1, P p1, P c2, P p2, double largura, double comprime
     }
     return (Solucao) {0};
 }
+/**
+ * Função responsavel por calcular efeitos causados pela interação entre os carrinhos
+ * @param c1
+ * @param c2
+ */
 void aplicarFisica (Carro *c1, Carro *c2){
 //    Solucao  s = colidiuQuadrado(c1->centro,c1->ponta,c1.)
 }
-void mover(Carro *c1, Carro *c2) {
 
-
-}
 
 void play(Carro *c1, Carro *c2) {
     if (!c1->alive)return;
@@ -134,6 +150,5 @@ void play(Carro *c1, Carro *c2) {
     setComando(output, c1);
     setComando(output + NUMERO_DE_SAIDAS, c2);
     aplicarFisica(c1, c2);
-    mover(c1, c2);
     chekAlive(c1, c2);
 }

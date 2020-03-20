@@ -7,14 +7,34 @@
 #IncludeRegexTransform: 
 
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/car.h
-../rng/fisica.c
-C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/rng/fisica.c
+fisica.h
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica.h
 ../rng_otimize/RNG.H
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/rng_otimize/RNG.h
 constantes.h
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/constantes.h
 
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/constantes.h
+
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica.h
+fisica_lib/fisica.h
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica_lib/fisica.h
+
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica_lib/fisica.c
+fisica.h
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica_lib/fisica.h
+math.h
+-
+stdio.h
+-
+stdlib.h
+-
+stdio.h
+-
+
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica_lib/fisica.h
+fisica.c
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/fisica_lib/fisica.c
 
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/main.c
 stdio.h
@@ -23,13 +43,9 @@ car.h
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/car.h
 time.h
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/time.h
-
-C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/rng/fisica.c
-math.h
--
-stdio.h
--
-stdlib.h
+string.h
+C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/c/string.h
+windows.h
 -
 
 C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto sumocup/carrinho/src/rng_otimize/RNG.h

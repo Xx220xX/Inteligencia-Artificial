@@ -1,3 +1,4 @@
+//import { exec } from 'child_process'
 var s_loading = false;
 function mload(ca,cb){
  return (result)=>{
@@ -6,6 +7,7 @@ function mload(ca,cb){
      //console.log(result[i]);
      eval(result[i]);
    }
+   
    //eval('result');
    
  };
@@ -14,7 +16,7 @@ function mload(ca,cb){
 var Stream = {
   load :
 (f, ca, cb)=> {
-  console.log('try load');
+  
   if (s_loading) {
     return null;
   }

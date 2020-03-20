@@ -3,8 +3,10 @@
 
 CMakeFiles/c.dir/main.c.obj: ../car.h
 CMakeFiles/c.dir/main.c.obj: ../constantes.h
+CMakeFiles/c.dir/main.c.obj: ../fisica.h
+CMakeFiles/c.dir/main.c.obj: ../fisica_lib/fisica.c
+CMakeFiles/c.dir/main.c.obj: ../fisica_lib/fisica.h
 CMakeFiles/c.dir/main.c.obj: ../main.c
-CMakeFiles/c.dir/main.c.obj: C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto\ sumocup/carrinho/src/rng/fisica.c
 CMakeFiles/c.dir/main.c.obj: C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto\ sumocup/carrinho/src/rng_otimize/RNG.h
 CMakeFiles/c.dir/main.c.obj: C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto\ sumocup/carrinho/src/rng_otimize/RNGCONFIG.h
 CMakeFiles/c.dir/main.c.obj: C:/Users/PC/Desktop/Henrique/Inteligencia-Artificial/projeto\ sumocup/carrinho/src/rng_otimize/RNG_constructor.h

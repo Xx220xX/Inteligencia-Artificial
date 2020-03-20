@@ -241,7 +241,7 @@ Solucao colidiuQuadrado(P c1,P p1,P c2,P p2,double largura,double comprimento){
 
 
 #include <stdio.h>
-int main(){
+int f_main(){
 	P c1 ={ 1,0},
 	  p1 = {8,9},
 	  c2 = {9,3},
